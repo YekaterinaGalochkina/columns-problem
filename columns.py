@@ -1,6 +1,26 @@
 def top_column(matrix):
-  # Write your solution here! 
-  pass
+  
+  list = []
+
+  for tuple in matrix:
+    for i in range(len(tuple)):
+      if len(list) < len(tuple):
+        list.append(tuple[i])
+      else: 
+        list[i] += tuple[i]
+  
+  max = list[0]
+
+  for el in list:
+    if el > max:
+      max = el
+
+  return list.index(max)
+
+# Time comp: O(r * c)
+# Space comp: O(c)
+# r = number of rows
+# c = number of columns  
 
 
 # Test cases
